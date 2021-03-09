@@ -1,0 +1,69 @@
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+rel="stylesheet">
+  <title>Healthy food picker</title>
+<style>
+body
+{
+background-color: #ffffcc
+}
+#sButt{
+  border-width: thick;
+}
+#num1{
+  border-width: thick;
+}
+h1{
+  font-family:'Yusei Magic', sans-serif;
+}
+</style>
+  <script>
+  function agecheck(){
+     var year = document.getElementById("num1").value;
+     x = parseInt(year);
+     var age = 2021 - year;
+      if(age > 200){
+      document.getElementById("output1").innerHTML = "you are " + age + " ...error too old";
+      }
+      else if(age > 10){
+        document.getElementById('pic1').innerHTML = "<img src = 'jamba.jpg' height='350px' width = '350px' onclick = 'not()'>";
+        document.getElementById('pic2').innerHTML = "<img src = 'chick.jpg' height='350px' width = '350px' onclick = 'healthy()'>";
+        document.getElementById('pic3').innerHTML = "<img src = 'salad.jpg' height='350px' width = '350px' onclick = 'healthy()'>";
+      }
+      else if(age < 0)
+      {
+        document.getElementById("output1").innerHTML = "you are " + age + "...error too young";
+      }
+      else if(age <= 10)
+      {
+        document.getElementById('pic1').innerHTML = "<img src = 'dino.jpg' height='350px' width = '350px' onclick = 'not()'>";
+        document.getElementById('pic2').innerHTML = "<img src = 'egg.jpg' height='350px' width = '350px' onclick = 'healthy()'>";
+        document.getElementById('pic3').innerHTML = "<img src = 'grape.jpg' height='350px' width = '350px' onclick = 'healthy()'>";
+      }
+     }
+       function healthy()
+   {
+       document.getElementById("output1").innerHTML = "This is a healthy option";
+   }
+       function not()
+   {
+       document.getElementById("output1").innerHTML = "This is NOT a healthy option";
+   }
+  </script>
+</head>
+<body>
+  <h1>Heathly Food Picker</h1>
+  <p>enter your age to see food options, clicking on one will let you know if
+    it is heathly or not</p>
+    <input type="text" value="Type Birth Year" id="num1">
+    <input type="button" value="Go" onclick="agecheck()" id=sButt>
+    <p id = "output1"></p>
+<table>
+<tr>
+<td><p id = "pic1"></p></td>
+<td><p id = "pic2"></p></td>
+<td><p id = "pic3"></p></td>
+</body>
+</html>
